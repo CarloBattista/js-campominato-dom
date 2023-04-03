@@ -151,7 +151,7 @@ body {
     font-weight: 700;
 }
 
-.box.bomb {
+.box.clickedBomb {
     background-color: orange;
     color: #fff;
     font-weight: 700;

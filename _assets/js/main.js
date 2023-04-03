@@ -68,7 +68,12 @@ function game() {
             const divBox = createDiv("div", "box", i); // Collego la richiesta della funzione a una variabile
 
             divBox.addEventListener("click", function () { // Al click di ogni elemento BOX gli viene aggiunta una classe che gli aggiunge un Background Color
-                this.classList.toggle("clickedBlue"); // Grazie al this rendo univoco ogni click del BOX
+                // this.classList.toggle("clickedBlue"); // Grazie al this rendo univoco ogni click del BOX
+                if(!bombs.includes(i)){
+                    this.classList.add("clickedBlue");
+                } else {
+                    this.classList.add("clickedBomb");
+                }
             })
 
             myFunction_set(valueSelectValue)
