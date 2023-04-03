@@ -55,6 +55,14 @@ function game() {
         const scoreContainer = document.querySelector(".score");
         console.log(scoreContainer)
 
+        const bodyOverflow = document.querySelector(".bodyOverflow");
+        const matchEnd = document.querySelector(".match_container");
+        const btnRestart = document.querySelector(".btnRestart");
+
+        btnRestart.addEventListener("click", function() {
+            window.location = "./index.html";
+        })
+
         let score = 1; // punteggio che parte da 0
 
         function createDiv(html, classs, text) { // Associo delle richieste alla funzione
@@ -69,6 +77,8 @@ function game() {
 
         const gridList = document.querySelector(".grid_List"); // Seleziono la griglia nel DOM
 
+        const matchEndText = document.querySelector(".heading_text");
+
         for (let i = 1; i <= valueSelectValue; i++) { // Ciclo FOR per far generare un numero da 1 a 100
             const divBox = createDiv("div", "box", i); // Collego la richiesta della funzione a una variabile
 
@@ -76,10 +86,14 @@ function game() {
                 // this.classList.toggle("clickedBlue"); // Grazie al this rendo univoco ogni click del BOX
                 if(!bombs.includes(i)){
                     this.classList.add("clickedBlue");
-                    scoreContainer.innerHTML = `<span class="score">${score++}</span>`;
+                    scoreContainer.innerHTML = `<span class="scoreText">Punteggio: <span class="score">${score++}</span></span>`;
+                    matchEndText.innerHTML = "Hai Vinto!!";
                 } else {
                     this.classList.add("clickedBomb");
                     this.innerHTML = `<i class="fa-solid fa-bomb fa-shake" style="color: #771717;"></i>`;
+                    matchEnd.style.display = "flex";
+                    matchEndText.innerHTML = "Hai Perso!!";
+                    bodyOverflow.style.overflow = "hidden";
                 }
             })
 
