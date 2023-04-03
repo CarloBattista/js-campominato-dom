@@ -49,8 +49,13 @@ function game() {
         let valueSelectText = selectLevels.options[selectLevels.selectedIndex].text; // Prende gli elementi text dentro la option
         console.log("Hai impostato il livello su: " + valueSelectText)
 
-        let bombs = generateBomb(valueSelectValue, 16);
+        let bombs = generateBomb(valueSelectValue, 16); // Genera le bombe  fino a un massimo di 16 in base al livello scelto
         console.log(bombs)
+
+        const scoreContainer = document.querySelector(".score");
+        console.log(scoreContainer)
+
+        let score = 1; // punteggio che parte da 0
 
         function createDiv(html, classs, text) { // Associo delle richieste alla funzione
             let element = document.createElement(html);
@@ -71,8 +76,10 @@ function game() {
                 // this.classList.toggle("clickedBlue"); // Grazie al this rendo univoco ogni click del BOX
                 if(!bombs.includes(i)){
                     this.classList.add("clickedBlue");
+                    scoreContainer.innerHTML = `<span class="score">${score++}</span>`;
                 } else {
                     this.classList.add("clickedBomb");
+                    this.innerHTML = `<i class="fa-solid fa-bomb fa-shake" style="color: #771717;"></i>`;
                 }
             })
 

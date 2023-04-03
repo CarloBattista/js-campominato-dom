@@ -89,6 +89,17 @@ body {
     }
 }
 
+.container_score{
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 1em;
+}
+
+.container_score .score{
+    color: #3535ec;
+    font-weight: 600;
+}
+
 /* Select BTN Levels */
 .levels_Game {
     position: relative;
