@@ -1,0 +1,213 @@
+:root{
+    --gridBox: repeat(10, 1fr);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    list-style-type: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    color: #001632;
+    user-select: none;
+}
+
+/* Main */
+.container_main {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.header {
+    width: 100%;
+    height: 70px;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f1f5fa;
+}
+
+.logoSite {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 30px;
+}
+
+.headingSite {
+    color: #001632;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-left: .5em;
+}
+
+.container_buttons {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    background-color: #3535ec;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 11px 22px;
+    height: 40px;
+}
+
+.btn.btnAnimation {
+    animation-name: pulse;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: #3535ec;
+    }
+
+    50% {
+        background-color: #F61566;
+    }
+
+    100% {
+        background-color: #3535ec;
+    }
+}
+
+/* Select BTN Levels */
+.levels_Game {
+    position: relative;
+    background-color: #3535ec;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 11px 22px;
+    height: 40px;
+    margin-right: 1em;
+}
+
+/* Game */
+.main_game {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.container_message {
+    height: 100vh;
+    padding: 4% 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.message {
+    color: #001632;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.grid_List {
+    padding: 4% 0;
+    display: grid;
+    grid-template-columns: var(--gridBox);
+}
+
+.box {
+    border: 1px solid #3535ec;
+    color: #001632;
+    width: 100%;
+    aspect-ratio: 1;
+    font-size: 2rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.box.clickedBlue {
+    background-color: #84a5fa;
+    color: #fff;
+    font-weight: 700;
+}
+
+.box.bomb {
+    background-color: orange;
+    color: #fff;
+    font-weight: 700;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    height: 70px;
+    padding: 0 60px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f1f5fa;
+}
+
+.footer span {
+    color: #001632;
+}
+
+.footer i {
+    color: #001632;
+    font-size: .9rem;
+}
+
+.footer a {
+    position: relative;
+    color: #3535ec;
+}
+
+.footer a::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #3535ec;
+    transition: width 200ms ease-in-out;
+}
+
+.footer a:hover::before {
+    width: 100%;
+}
+
+/* Media Query */
+
+@media only screen and (max-width: 900px) {
+
+    .header,
+    .footer {
+        padding: 0 4%;
+    }
+
+    .box {
+        font-size: 1.3rem;
+    }
+}

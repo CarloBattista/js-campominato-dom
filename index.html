@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-campominato-grid</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./_assets/css/main.css">
+
+    <!-- CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+    <!-- Main -->
+    <div class="container_main">
+        <!-- Header -->
+        <div class="header">
+            <a href="./index.html" class="logoSite">
+                <img class="logo" src="./_assets/_resources/imgs/Logo.png" alt="logo">
+                <h1 class="headingSite">Campo Minato</h1>
+            </a>
+            <div class="container_buttons">
+                <select name="levels" id="levelsGame" class="levels_Game">
+                    <option value="100">Facile</option>
+                    <option value="81">Medio</option>
+                    <option value="49">Difficile</option>
+                </select>
+                <button class="btn btn_play">Gioca!!</button>
+            </div>
+        </div>
+        <!-- Game -->
+        <div class="main_game">
+            <div class="container_message">
+                <h2 class="message">Al momento non stai giocando!</h2>
+            </div>
+            <div class="grid_List"></div>
+        </div>
+        <!-- Footer -->
+        <div class="footer">
+            <span>Made with <i class="fa-solid fa-heart"></i> by <a href="https://boolean.careers/">Boolean</a></span>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="./_assets/js/main.js"></script>
+    
+</body>
+</html>
